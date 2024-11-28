@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import MenuData from '../Screens/MenuData';
 
 const MenuScreen = ({ route }) => {
-  const { menuData } = route.params || {}; // Verifica si `menuData` está presente
+  MenuData = route.params || {}; // Verifica si `menuData` está presente
 
-  if (!menuData) {
+  if (!MenuData) {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>No se encontraron datos del menú</Text>
@@ -12,12 +13,12 @@ const MenuScreen = ({ route }) => {
     );
   }
 
-  console.log('Menú recibido:', menuData); // Depuración
+  console.log('Menú recibido:', MenuData); // Depuración
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{menuData.name}</Text>
-      {menuData.items.map((item, index) => (
+      <Text style={styles.title}>{MenuData.name}</Text>
+      {MenuData.items.map((item, index) => (
         <Text key={index} style={styles.data}>
           - {item}
         </Text>

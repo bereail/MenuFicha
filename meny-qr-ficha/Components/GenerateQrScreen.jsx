@@ -7,7 +7,7 @@ const GenerateQrScreen = () => {
   return (
     <View style={styles.container}>
       <QRCode
-        value="http://localhost:8081/menu" // Aquí colocas la URL a la que deseas redirigir
+        value="http://localhost:8082/menu" // Aquí colocas la URL a la que deseas redirigir
         size={200} // Tamaño del QR
       />
     </View>
